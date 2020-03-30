@@ -1,3 +1,7 @@
 /* eslint-disable no-console */
+import './scss/style.scss';
 
-console.log('test');
+const test = '2';
+const awoo = test + 2;
+
+console.log(awoo);

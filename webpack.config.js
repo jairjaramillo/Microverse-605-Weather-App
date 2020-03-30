@@ -1,7 +1,11 @@
+// eslint-disable-next-line no-unused-vars
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  watch: true,
   entry: `${__dirname}/src/index.js`,
   output: {
     path: `${__dirname}/dist`,
@@ -16,17 +20,7 @@ module.exports = {
         use: 'eslint-loader',
       },
       {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'ts-loader',
-          options: {
-            transpileOnly: true,
-          },
-        },
-      },
-      {
-        test: /\.scss$/,
+        test: /\.s[ac]ss$/i,
         use: [
           'style-loader',
           'css-loader',
@@ -40,14 +34,25 @@ module.exports = {
         ],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
-          'file-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
         ],
       },
     ],
   },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      hash: true,
+      title: 'Weatherwave',
+      template: `${__dirname}/src/dom/index.html`,
+      filename: 'index.html',
+    }),
+  ],
 };
