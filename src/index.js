@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
 import './scss/style.scss';
+import NavBar from './navbar';
 
-const test = '2';
-const awoo = test + 2;
-
-console.log(awoo);
+const navbar = new NavBar();

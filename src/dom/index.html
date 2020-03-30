@@ -6,10 +6,10 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="main-container">
       <nav class="rborder rfont rbg navbar">Nav
-        <div class="add-button">
-
+        <div class="form">
+          <button class="add-button" id="add-button">ADD</button>
         </div>
         <div class="country-list"></div>
       </nav>
@@ -17,5 +17,11 @@
       <main class="rborder rfont rbg main">News</main>
       <footer class="rborder rfont rbg footer">Footer</footer>
     </div>
+    <form class="modal-form" id="modal-form">
+      <div>Add a country to the list:</div>
+      <input type="text" name="country" id="country">
+      <input type="button" value="Add">
+      <input type="button" value="Cancel">
+    </form>
   </body>
 </html>
