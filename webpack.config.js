@@ -2,10 +2,10 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: 'src/index.js',
+  entry: `${__dirname}/src/index.js`,
   output: {
     path: `${__dirname}/dist`,
-    filename: '[name].[chunkhash:8].js',
+    filename: 'main.js',
   },
   module: {
     rules: [
