@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 // eslint-disable-next-line no-unused-vars
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -20,12 +21,23 @@ module.exports = {
         use: 'eslint-loader',
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
+        test: /\.(scss)$/,
+        use: [{
+          loader: 'style-loader', // inject CSS to page
+        }, {
+          loader: 'css-loader', // translates CSS into CommonJS modules
+        }, {
+          loader: 'postcss-loader', // Run postcss actions
+          options: {
+            plugins() { // postcss plugins, can be exported to postcss.config.js
+              return [
+                require('autoprefixer'),
+              ];
+            },
+          },
+        }, {
+          loader: 'sass-loader', // compiles Sass to CSS
+        }],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
