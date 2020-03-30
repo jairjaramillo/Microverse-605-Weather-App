@@ -1,0 +1,22 @@
+{
+  "name": "microverse-605-weather-app",
+  "version": "1.0.0",
+  "description": "Microverse 605",
+  "main": "index.js",
+  "scripts": {
+    "test": "testi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jairjy/Microverse-605-Weather-App.git"
+  },
+  "keywords": [
+    "keym"
+  ],
+  "author": "Jair Jaramillo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jairjy/Microverse-605-Weather-App/issues"
+  },
+  "homepage": "https://github.com/jairjy/Microverse-605-Weather-App#readme"
+}
