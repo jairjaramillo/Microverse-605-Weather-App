@@ -5,9 +5,22 @@
 // @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
-$rFont: "Major Mono Display", monospace;
 $nFont: monospace;
 $fill: rgba(109, 101, 141, 0.438);
 $bg: black;
 $font: white;
 $border: rgb(156, 156, 156);
+$waveFont: "Major Mono Display", monospace;
+$waveColor: #e000c2;
+$waveShadow: -2px 2px $waveColor;
+
+.wave {
+  font-family: $waveFont;
+  text-shadow: $waveShadow;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}

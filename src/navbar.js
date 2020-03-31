@@ -4,9 +4,9 @@ import create from './helper/create';
 
 class NavBar {
   constructor() {
-    document.getElementById('add-button').addEventListener('click', () => {
-      this.showModal();
-    });
+    document.getElementById('add-form').onsubmit = (e) => {
+      console.log(e);
+    };
   }
 
   showModal() {
