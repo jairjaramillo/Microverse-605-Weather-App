@@ -1,12 +1,13 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 @import "theme";
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+// @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+$rFont: "Major Mono Display", monospace;
+$nFont: monospace;
 $fill: rgba(109, 101, 141, 0.438);
 $bg: black;
 $font: white;
 $border: rgb(156, 156, 156);
-
-$rFont: 'Major Mono Display', monospace;
-$nFont: monospace;

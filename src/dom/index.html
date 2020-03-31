@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body class="container">
-    <div class="row">
-      <nav class="col-md-4">NAV</nav>
-      <div class="row col-md-8">
-        <header class="col-12">HEAD</header>
-        <main class="col-12">MAIN</main>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="container">
+  <div class="row col">
+    <nav class="col-md-4">
+      <form class="form-group">
+        <div class="row col">
+          <input type="text" name="country" class="form-control col-10" placeholder="" required>
+          <button class="btn btn-primary col-2" type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <small id="helpId" class="text-muted">Add a place</small>
+      </form>
+    </nav>
+
+    <div class="row col-md-8">
+      <header class="col-12">HEAD</header>
+      <main class="col-12">MAIN</main>
     </div>
-    <div class="row">
-      <footer class="col-12">FOOT</footer>
-    </div>
-  </body>
+  </div>
+  <div class="row col">
+    <footer class="col-12">FOOT</footer>
+  </div>
+</body>
+
 </html>

@@ -1,8 +1,10 @@
-/* eslint-disable no-console */
-// import 'bootstrap/dist/css/bootstrap.min.css';
+/* eslint-disable no-unused-vars */
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/regular';
+import '@fortawesome/fontawesome-free/js/brands';
 import 'bootstrap';
 import './scss/style.scss';
 import NavBar from './navbar';
 
-// eslint-disable-next-line no-unused-vars
 const navbar = new NavBar();

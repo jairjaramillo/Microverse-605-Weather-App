@@ -1,5 +1,5 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable class-methods-use-this */
-// eslint-disable-next-line no-unused-vars
 import create from './helper/create';
 
 class NavBar {
