@@ -1,5 +1,6 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
+@import "theme";
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
 $fill: rgba(109, 101, 141, 0.438);
@@ -9,51 +10,3 @@ $border: rgb(156, 156, 156);
 
 $rFont: 'Major Mono Display', monospace;
 $nFont: monospace;
-
-// body {
-//   color: $fill;
-//   background: $bg;
-// }
-
-// .rfont {
-//   font-family: $rFont;
-//   color: $font;
-// }
-
-// .container {
-//   display: grid;
-//   grid-template-columns: 1fr 6fr;
-//   grid-template-rows: 100px auto 100px;
-//   gap: 5px;
-// }
-
-// .rborder {
-//   border-style: dotted;
-//   border-color: $border;
-//   border-width: 2px;
-//   border-radius: 5px;
-// }
-
-// .rbg {
-//   background-color: $fill;
-// }
-
-// nav {
-//   grid-row: 1 / 3;
-// }
-
-// footer {
-//   grid-column: 1 / 3;
-// }
-
-// .toggle-background {
-//   display: none;
-// }
-
-// .toggle-background * {
-// }
-
-// .main-container {
-//   position: absolute;
-//   margin: 0 auto;
-// }

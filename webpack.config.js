@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -23,13 +23,13 @@ module.exports = {
       {
         test: /\.(scss)$/,
         use: [{
-          loader: 'style-loader', // inject CSS to page
+          loader: 'style-loader',
         }, {
-          loader: 'css-loader', // translates CSS into CommonJS modules
+          loader: 'css-loader',
         }, {
-          loader: 'postcss-loader', // Run postcss actions
+          loader: 'postcss-loader',
           options: {
-            plugins() { // postcss plugins, can be exported to postcss.config.js
+            plugins() {
               return [
                 require('autoprefixer'),
               ];
@@ -59,7 +59,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       hash: true,
       title: 'Weatherwave',
