@@ -1,5 +1,6 @@
-/* eslint-disable class-methods-use-this */
+/* eslint-disable no-console */
 import create from './helper/create';
+// import weatherKey from './helper/weatherKey';
 
 class Control {
   constructor(Countries) {
@@ -10,6 +11,13 @@ class Control {
       this.countryList.addCountry(document.forms['add-form'][0].value);
       this.renderList(this.countryList);
       document.getElementById('add-form').reset();
+      fetch('http://api.openweathermap.org/data/2.5/weather?q=Puebla&APPID=de3a09c0785c29e8bad620782f544372', { mode: 'cors' })
+        .then((response) => {
+          console.log(response.json());
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     };
   }
 
@@ -22,8 +30,16 @@ class Control {
       document.getElementById(`country-${i}`).onclick = () => {
         this.cleanActive();
         countryBlock.classList.add('active-block');
+        this.renderWeather(i);
       };
     }
+  }
+
+  renderWeather(index) {
+    const weatherShow = document.getElementById('weather-show');
+    weatherShow.innerHTML = '';
+    const weatherBlock = create(weatherShow);
+    weatherBlock.innerHTML = this.countryList.countries[index];
   }
 
   cleanActive() {
