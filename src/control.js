@@ -49,8 +49,8 @@ class Control {
     weatherName.innerHTML = this.countryList.countries[index].name;
     const weatherDescription = create(weatherLeft, 'wave-desc');
     weatherDescription.innerHTML = `${this.countryList.countries[index].description} -
-      ${this.countryList.countries[index].temp} C° /
-      ${this.countryList.countries[index].temp + 33} F°`;
+      ${this.countryList.countries[index].tempC} C° /
+      ${this.countryList.countries[index].tempF} F°`;
     const weatherRight = create(weatherBlock, 'col-4');
     const weatherPic = create(weatherRight, 'mx-auto d-block', '', 'img');
     weatherPic.setAttribute('src', `http://openweathermap.org/img/wn/${this.countryList.countries[index].icon}.png`);
@@ -65,7 +65,6 @@ class Control {
     fetch(url, { mode: 'cors' })
       .then((response) => {
         response.json().then((data) => {
-          console.log(data.articles);
           for (let i = 0; i < 5; i += 1) {
             const newsBlock = create(newsShow, 'my-3');
             const newsTitle = create(newsBlock, 'link', '', 'a');
@@ -88,24 +87,31 @@ class Control {
   addButtonEv() {
     document.getElementById('add-form').onsubmit = (e) => {
       e.preventDefault();
-      const fetchString = `http://api.openweathermap.org/data/2.5/weather?q=${document.forms['add-form'][0].value}&units=metric&APPID=${weatherKey()}`;
+      const name = document.forms['add-form'][0].value;
+      const fetchString = `http://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&APPID=${weatherKey()}`;
       fetch(fetchString, { mode: 'cors' })
         .then((response) => {
           response.json().then((data) => {
-            console.log(data);
-            this.countryList.addCountry({
-              id: data.sys.id,
-              name: data.name,
-              country: data.sys.country,
-              lon: data.coord.lon,
-              lat: data.coord.lat,
-              temp: data.main.temp,
-              weatherId: data.weather[0].id,
-              weather: data.weather[0].main,
-              description: data.weather[0].description,
-              icon: data.weather[0].icon,
-            });
-            this.renderList();
+            const imperial = `http://api.openweathermap.org/data/2.5/weather?q=${name}&units=imperial&APPID=${weatherKey()}`;
+            fetch(imperial, { mode: 'cors' })
+              .then((impResponse) => {
+                impResponse.json().then((impData) => {
+                  this.countryList.addCountry({
+                    id: data.sys.id,
+                    name: data.name,
+                    country: data.sys.country,
+                    lon: data.coord.lon,
+                    lat: data.coord.lat,
+                    tempC: data.main.temp,
+                    tempF: impData.main.temp,
+                    weatherId: data.weather[0].id,
+                    weather: data.weather[0].main,
+                    description: data.weather[0].description,
+                    icon: data.weather[0].icon,
+                  });
+                  this.renderList();
+                });
+              });
           });
         })
         .catch((err) => {

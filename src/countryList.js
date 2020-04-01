@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// import Country from './country';
-
 class CountryList {
   constructor() {
     if (localStorage.countries) this.countries = JSON.parse(localStorage.countries);
