@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-free/js/brands';
 import 'bootstrap';
 import './scss/style.scss';
 import Control from './control';
-import Countries from './countries';
+import CountryList from './countryList';
 
-const navbar = new Control(new Countries());
+const countryList = new CountryList();
+const navbar = new Control(countryList);

@@ -8,11 +8,11 @@
 </head>
 
 <body class="container">
-  <div class="row col">
+  <div class="row">
     <nav class="col-md-4">
-      <form action="" id="add-form" method="get">
+      <form class="col" action="" id="add-form" method="get">
         <small class="text-muted">Add a place</small>
-        <div class="row col">
+        <div class="row">
           <input type="text" name="country" class="form-control col-10" required>
           <button class="btn btn-info col-2" type="submit"><i class="fas fa-search"></i></button>
         </div>
@@ -20,14 +20,19 @@
       <div class="list-group" id="country-list"></div>
     </nav>
 
-    <div class="row col-md-8">
+    <div class="col-md-8">
       <header class="col-12 display-2 wave">WEATHERWAVE</header>
-      <main class="col-12" id="weather-show">MAIN</main>
+      <main class="col-12 mt-5" id="weather-show">Select a Country or create a new one</main>
+      <div class="col mb-5" id="news-show"></div>
     </div>
   </div>
+
   <div class="row col">
     <footer class="col-12 text-center footer">
-      Jair Jaramillo 2020. Microverse Weather App
+      <small><a href="https://github.com/jairjy" target="_blank">Jair Jaramillo</a>, 2020</small>
+      <small><a href="https://www.microverse.org/" target="_blank">Microverse Weather App.</a></small>
+      <small>Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherApp</a> and
+        <a href="https://newsapi.org/" target="_blank">News API</a></small>
     </footer>
   </div>
 </body>

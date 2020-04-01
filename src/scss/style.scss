@@ -11,20 +11,36 @@ $bg: black;
 $font: white;
 $border: rgb(156, 156, 156);
 $waveFont: "Major Mono Display", monospace;
-$waveColor: #e000c2;
-$waveShadow: -2px 2px $waveColor;
+$waveColor1: #e000c2;
+$waveColor2: #1f6892;
+$waveShadow1: -2px 2px $waveColor1;
+$waveShadow2: -2px 2px $waveColor2;
 
 .wave {
   font-family: $waveFont;
-  text-shadow: $waveShadow;
+  text-shadow: $waveShadow1;
+}
+
+.wave-name {
+  font-family: $waveFont;
+  text-shadow: $waveShadow2;
+}
+
+.wave-desc {
+  text-transform: uppercase;
 }
 
 .footer {
+  background-color: black;
   position: fixed;
   left: 0;
   bottom: 0;
 }
 
 .active-block {
-  background-color: red;
+  background-color: $waveColor2;
+}
+
+.link {
+  color: $waveColor1;
 }
