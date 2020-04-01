@@ -10,16 +10,32 @@ class Control {
     this.addButtonEv();
   }
 
+  cleanActive() {
+    for (let i = 0; i < this.countryList.countries.length; i += 1) {
+      const currentElement = document.getElementById(`country-${i}`);
+      currentElement.classList.remove('active-block');
+    }
+  }
+
   renderList() {
     const countryList = document.getElementById('country-list');
     countryList.innerHTML = '';
     for (let i = 0; i < this.countryList.countries.length; i += 1) {
       const countryBlock = create(countryList, 'list-group-item', `country-${i}`);
-      countryBlock.innerHTML = this.countryList.countries[i].name;
+      const countryItem = create(countryBlock, 'row');
+      const countryLeft = create(countryItem, 'col-10');
+      const countryRight = create(countryItem, 'col-2', `delete-${i}`);
+      countryRight.innerHTML = '<i class="fas fa-times"></i>';
+      countryLeft.innerHTML = this.countryList.countries[i].name;
       document.getElementById(`country-${i}`).onclick = () => {
         this.cleanActive();
         countryBlock.classList.add('active-block');
         this.renderWeather(i);
+      };
+      document.getElementById(`delete-${i}`).onclick = () => {
+        this.cleanActive();
+        this.countryList.removeCountry(i);
+        this.renderList();
       };
     }
   }
@@ -32,7 +48,9 @@ class Control {
     const weatherName = create(weatherLeft, 'h2 wave-name');
     weatherName.innerHTML = this.countryList.countries[index].name;
     const weatherDescription = create(weatherLeft, 'wave-desc');
-    weatherDescription.innerHTML = this.countryList.countries[index].description;
+    weatherDescription.innerHTML = `${this.countryList.countries[index].description} -
+      ${this.countryList.countries[index].temp} C° /
+      ${this.countryList.countries[index].temp + 33} F°`;
     const weatherRight = create(weatherBlock, 'col-4');
     const weatherPic = create(weatherRight, 'mx-auto d-block', '', 'img');
     weatherPic.setAttribute('src', `http://openweathermap.org/img/wn/${this.countryList.countries[index].icon}.png`);
@@ -67,26 +85,21 @@ class Control {
       });
   }
 
-  cleanActive() {
-    for (let i = 0; i < this.countryList.countries.length; i += 1) {
-      const currentElement = document.getElementById(`country-${i}`);
-      currentElement.classList.remove('active-block');
-    }
-  }
-
   addButtonEv() {
     document.getElementById('add-form').onsubmit = (e) => {
       e.preventDefault();
-      const fetchString = `http://api.openweathermap.org/data/2.5/weather?q=${document.forms['add-form'][0].value}&APPID=${weatherKey()}`;
+      const fetchString = `http://api.openweathermap.org/data/2.5/weather?q=${document.forms['add-form'][0].value}&units=metric&APPID=${weatherKey()}`;
       fetch(fetchString, { mode: 'cors' })
         .then((response) => {
           response.json().then((data) => {
+            console.log(data);
             this.countryList.addCountry({
               id: data.sys.id,
               name: data.name,
               country: data.sys.country,
               lon: data.coord.lon,
               lat: data.coord.lat,
+              temp: data.main.temp,
               weatherId: data.weather[0].id,
               weather: data.weather[0].main,
               description: data.weather[0].description,
