@@ -7,11 +7,11 @@
 
 <center><h1>Microverse 605: Weather App</h1></center>
 
-<center><h2><a href="https://raw.githack.com/rmauritsson/todo-list/feature/logic/dist/index.html">Check a live version of this project</a><h2></center>
+<center><h2><a href="https://jairjy.github.io/Microverse-605-Weather-App/index.html">Check a live version of this project</a><h2></center>
 
 ## About The Project
 
-This project is a Todo web app that allows you to make To-Dos type of notes, create as many projects as you want to put more To-Dos in them. You can edit and delete them.
+This project is a web app where the user can add as many countries as they want, the weather of the selected country will be shown on the right side of the site. Additionally, some news of the country appears.
 
 <p align="center">
   <img src="./doc/screenshot.png" alt="screenshot">
@@ -19,13 +19,17 @@ This project is a Todo web app that allows you to make To-Dos type of notes, cre
 
 ### Built With
 
-This progam was made using this technologies
+This app was made using this technologies
 
 * [Javascript](https://www.javascript.com/)
 * [Node JS](https://nodejs.org/en/)
 * [NPM](https://www.npmjs.com/)
 * [Bootstrap](https://getbootstrap.com/)
 * [Stickler](https://stickler-ci.com/)
+
+This app also uses these services/APIs:
+* [OpenWeatherApp](https://openweathermap.org/)
+* [News API](https://newsapi.org/)
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps:
@@ -57,47 +61,24 @@ Go to the repository folder and install the NPM modules:
 
 ```sh
 npm install
-npm install --save-dev webpack webpack-cli
 ```
 
-Then, generate the main.js file by using webpack.
+Then, generate output files:
 
 ```sh
-npx webpack --mode=development
+npm run dev
 ```
 For development mode, and:
 
 ```sh
-npx webpack --mode=production
+npm run build
 ```
 For production.
 ## Usage
 
-The To-Do program needs a container on your DOM with the id 'container' in order to append the interface and generate the Project List object.
+After NPM generates the output files, open the "index.html" file located on the "dist" folder.
 
-If you want to test the web app, create an index.html file inside the dist/ directory and add the main.js script, along with bootstrap. Then add a 'div' element in the body with the 'container' id tag:
-
-```html
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
-    <title>Todo List</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  </head>
-  <body>
-    <div id="container" class="container"></div>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="main.js" defer></script>
-  </body>
-</html>
-```
-
-Then just open the index.html file on your browser.
+Then you can add the countries you like using the form on the upper left.
 
 ## License
 
@@ -107,11 +88,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-* Leonard Rwai Kanyesigye: [Github](https://github.com/rmauritsson), [Twitter](https://twitter.com/leokanye)
-
 * Jair Jaramillo: [Github](https://github.com/jairjy), [Twitter](https://twitter.com/jairjy)
 
-Project Link: [https://github.com/rmauritsson/todo-list](https://github.com/rmauritsson/todo-list)
+Project Link: [https://github.com/jairjy/Microverse-605-Weather-App](https://github.com/jairjy/Microverse-605-Weather-App)
 
 <!-- ACKNOWLEDGEMENTS -->
 
