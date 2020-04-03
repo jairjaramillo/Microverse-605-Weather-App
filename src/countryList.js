@@ -12,9 +12,8 @@ export default class CountryList {
 
   getLast(array = this.countries) { return array[array.length - 1]; }
 
-  async addCountry(jsonData, array = this.countries) {
-    const data = await jsonData;
-    array.push(data);
+  addCountry(jsonData, array = this.countries) {
+    array.push(jsonData);
     this.saveList();
   }
 

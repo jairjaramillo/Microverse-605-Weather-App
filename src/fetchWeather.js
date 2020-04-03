@@ -6,7 +6,7 @@ export default async function fetchWeather(query, unit = 1) {
     const fetchData = await fetch(fetchString, { mode: 'cors' });
     const data = await fetchData.json();
     // console.log(data);
-    return data;
+    return [data, unit];
   } catch (error) {
     // eslint-disable-next-line no-console
     console.log(error);

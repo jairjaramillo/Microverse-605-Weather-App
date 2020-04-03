@@ -21,25 +21,25 @@
     </nav>
 
     <div class="col-md-8">
-      <div class="row">
-        <header class="col-11 display-2 wave">WEATHERWAVE</header>
-        <div class="col-1">
-          <button class='col btn btn-switch' id='button-c'>C°</button>
-          <button class='col btn btn-switch' id='button-f'>F°</button>
-        </div>
-      </div>
-      <main class="col-12 mt-5" id="weather-show">Select a Country or create a new one</main>
+      <header class="col display-2 wave">WEATHERWAVE</header>
+      <main class="col mt-5" id="weather-show">Select a Country or create a new one</main>
       <div class="col mb-5" id="news-show"></div>
     </div>
   </div>
 
   <div class="row col">
-    <footer class="col-12 text-center footer">
+    <footer class="col-8 text-left footer">
       <small><a class="link" href="https://github.com/jairjy" target="_blank">Jair Jaramillo</a>, 2020</small>
       <small><a class="link" href="https://www.microverse.org/" target="_blank">Microverse Weather App.</a></small>
       <small>Powered by <a class="link" href="https://openweathermap.org/" target="_blank">OpenWeatherApp</a> and
         <a class="link" href="https://newsapi.org/" target="_blank">News API</a></small>
     </footer>
+    <div class="col-4 offset-8 text-right footer">
+      <small>OPTIONS: </small>
+      <small class="btn-active" id="change-c">CELSIUS</small>
+      <small> / </small>
+      <small class="" id="change-f">FARENHEIT</small>
+    </div>
   </div>
 </body>
 

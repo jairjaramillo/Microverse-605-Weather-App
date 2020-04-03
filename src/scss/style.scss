@@ -40,6 +40,11 @@ $waveShadow2: -2px 2px $waveColor2;
   background-color: $waveColor2;
 }
 
+.btn-active {
+  color: $waveColor1;
+  font-weight: bolder;
+}
+
 .link {
   color: $waveColor1;
 }
