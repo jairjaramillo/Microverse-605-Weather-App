@@ -1,26 +1,22 @@
+import dataLoad from './helper/dataLoad';
+import dataSave from './helper/dataSave';
+
 export default class CountryList {
   constructor() {
-    if (localStorage.countries) localStorage.removeItem('countries');
-    if (localStorage.countryStorage) this.countries = JSON.parse(localStorage.countryStorage);
-    else this.countries = [];
-  }
-
-  saveList(array = this.countries) {
-    if (typeof (Storage) !== 'undefined') localStorage.countryStorage = JSON.stringify(array);
-    // eslint-disable-next-line no-console
-    else console.log('ERROR: No web storage support. Using a temporal storage instead');
+    this.countries = dataLoad('countryStorage', 'countries');
+    if (this.countries === null) this.countries = [];
   }
 
   getLast(array = this.countries) { return array.length - 1; }
 
-  addCountry(jsonData, array = this.countries) {
+  addCountry(jsonData, array = this.countries, storage = 'countryStorage') {
     array.push(jsonData);
-    this.saveList();
+    dataSave(storage, array);
   }
 
-  removeCountry(index, array = this.countries) {
+  removeCountry(index, array = this.countries, storage = 'countryStorage') {
     array.splice(index, 1);
-    this.saveList();
+    dataSave(storage, array);
   }
 
   removeLast(array = this.countries) { this.removeCountry(array.length - 1); }

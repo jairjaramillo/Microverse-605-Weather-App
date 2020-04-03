@@ -2,11 +2,13 @@
 import create from './helper/create';
 import fetchWeather from './fetchWeather';
 import fetchNews from './fetchNews';
+import dataLoad from './helper/dataLoad';
+import dataSave from './helper/dataSave';
 
 export default class Render {
   constructor(CountryList) {
-    if (localStorage.temp) this.type = JSON.parse(localStorage.temp);
-    else this.type = 1;
+    this.type = dataLoad('temp');
+    if (this.type === null) this.type = 1;
 
     this.countryList = CountryList;
     this.renderList();
@@ -22,21 +24,15 @@ export default class Render {
 
     document.getElementById('change-c').onclick = () => {
       this.type = 1;
-      this.saveTemp();
+      dataSave('temp', this.type);
       this.renderTemp();
     };
 
     document.getElementById('change-f').onclick = () => {
       this.type = 2;
-      this.saveTemp();
+      dataSave('temp', this.type);
       this.renderTemp();
     };
-  }
-
-  saveTemp(data = this.type) {
-    if (typeof (Storage) !== 'undefined') localStorage.temp = JSON.stringify(data);
-    // eslint-disable-next-line no-console
-    else console.log('ERROR: No web storage support. Using a temporal storage instead');
   }
 
   renderTemp() {
