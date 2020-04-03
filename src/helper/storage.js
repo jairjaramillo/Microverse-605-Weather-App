@@ -23,12 +23,18 @@ export default class Storage {
   static localSave(storage, data) {
     if (typeof (Storage) !== 'undefined') {
       localStorage.setItem(storage, JSON.stringify(data));
-    } else console.log(this.errorMessage);
+      return true;
+    }
+    console.log(this.errorMessage);
+    return false;
   }
 
   static sessionSave(storage, data) {
     if (typeof (Storage) !== 'undefined') {
       sessionStorage.setItem(storage, JSON.stringify(data));
-    } else console.log(this.errorMessage);
+      return true;
+    }
+    console.log(this.errorMessage);
+    return false;
   }
 }
