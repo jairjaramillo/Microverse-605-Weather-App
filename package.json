@@ -4,7 +4,7 @@
   "description": "Microverse 605",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
+    "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "test": "testi"
   },

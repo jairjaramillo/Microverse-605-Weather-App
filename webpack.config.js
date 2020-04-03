@@ -1,12 +1,13 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-unresolved */
 /* eslint-disable global-require */
-// eslint-disable-next-line no-unused-vars
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  watch: true,
   entry: `${__dirname}/src/index.js`,
   output: {
     path: `${__dirname}/dist`,
@@ -78,7 +79,7 @@ module.exports = {
     ],
   },
   plugins: [
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       hash: true,
       title: 'Weatherwave',
