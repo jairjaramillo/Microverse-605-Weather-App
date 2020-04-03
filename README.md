@@ -6,7 +6,7 @@
 
 <center><h1>Microverse 605: Weather App</h1></center>
 
-<center><h2><a href="https://jairjy.github.io/Microverse-605-Weather-App" target="_blank">Check a live version of this project</a><h2></center>
+<center><h2><a href="https://jairjy.github.io/Microverse-605-Weather-App/" target="_blank">Check a live version of this project</a><h2></center>
 
 ## About The Project
 
@@ -20,12 +20,11 @@ This project is a web app where the user can add as many countries as they want,
 
 This app was made using this technologies
 
-* <a href="" target="_blank">Javascript</a>
-* <a href="" target="_blank">Node JS</a>
-* <a href="" target="_blank">NPM</a>
-* <a href="" target="_blank">Bootstrap</a>
-* <a href="" target="_blank">Stickler</a>
-<a href="" target="_blank"></a>
+* <a href="https://www.javascript.com/" target="_blank">Javascript</a>
+* <a href="https://nodejs.org/en/" target="_blank">Node JS</a>
+* <a href="https://www.npmjs.com/" target="_blank">NPM</a>
+* <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+* <a href="https://stickler-ci.com/" target="_blank">Stickler</a>
 
 This app also uses these services/APIs:
 * <a href="https://openweathermap.org/" target="_blank">OpenWeatherApp</a>[]()
