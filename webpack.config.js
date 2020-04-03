@@ -4,7 +4,7 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -45,7 +45,7 @@ module.exports = {
             },
           },
         }, {
-          loader: 'sass-loader', // compiles Sass to CSS
+          loader: 'sass-loader',
         }],
       },
       {
@@ -79,7 +79,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       hash: true,
       title: 'Weatherwave',

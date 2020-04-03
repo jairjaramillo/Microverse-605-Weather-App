@@ -1,16 +1,17 @@
 export default class CountryList {
   constructor() {
-    if (localStorage.countries) this.countries = JSON.parse(localStorage.countries);
+    if (localStorage.countries) localStorage.removeItem('countries');
+    if (localStorage.countryStorage) this.countries = JSON.parse(localStorage.countryStorage);
     else this.countries = [];
   }
 
   saveList(array = this.countries) {
-    if (typeof (Storage) !== 'undefined') localStorage.countries = JSON.stringify(array);
+    if (typeof (Storage) !== 'undefined') localStorage.countryStorage = JSON.stringify(array);
     // eslint-disable-next-line no-console
     else console.log('ERROR: No web storage support. Using a temporal storage instead');
   }
 
-  getLast(array = this.countries) { return array[array.length - 1]; }
+  getLast(array = this.countries) { return array.length - 1; }
 
   addCountry(jsonData, array = this.countries) {
     array.push(jsonData);
