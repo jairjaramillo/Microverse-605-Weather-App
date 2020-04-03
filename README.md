@@ -7,7 +7,7 @@
 
 <center><h1>Microverse 605: Weather App</h1></center>
 
-<center><h2><a href="https://jairjy.github.io/Microverse-605-Weather-AppP">Check a live version of this project</a><h2></center>
+<center><h2><a href="https://jairjy.github.io/Microverse-605-Weather-App">Check a live version of this project</a><h2></center>
 
 ## About The Project
 
