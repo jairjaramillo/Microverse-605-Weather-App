@@ -30,7 +30,7 @@ SOFTWARE.
  * @param {String} className (Optional) The class or classes the element will have.
  * @param {String} idName (Optional) The ID tag of the element.
  * @param {String} elementType (Optional) The type of the element it will be created. <div> by default.
- #endregion */
+ */
 export default function create(appendTo, className = '', idName = '', elementType = 'div') {
   const element = document.createElement(elementType);
   if (className !== '') element.className = className;
