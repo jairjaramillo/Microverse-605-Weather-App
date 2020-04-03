@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 
 /**
- * Has a set of static functions that allows to save or load data from localStorage or sessionStorage
+ * Has a set of static functions that allows to save or load data from localStorage or sessionStorage.
  */
 export default class Storage {
   constructor() {
@@ -11,8 +11,8 @@ export default class Storage {
 
   /**
    * Looks for the storage value on your localStorage, and if it finds it, it returns it, otherwhise it returns NULL.
-   * @param {String} storage The name of the storage in localStorage that will be loaded
-   * @param {String} oldStorage (Optional) The name of the storage in localStorage that will be deleted
+   * @param {String} storage The name of the storage in localStorage that will be loaded.
+   * @param {String} oldStorage (Optional) The name of the storage in localStorage that will be deleted.
    */
   static localLoad(storage, oldStorage = null) {
     if (oldStorage !== null && localStorage.getItem(oldStorage)) {
@@ -24,8 +24,8 @@ export default class Storage {
 
   /**
    * Looks for the storage value on your sessionStorage, and if it finds it, it returns it, otherwhise it returns NULL.
-   * @param {String} storage The name of the storage in sessionStorage that will be loaded
-   * @param {String} oldStorage (Optional) The name of the storage in sessionStorage that will be deleted
+   * @param {String} storage The name of the storage in sessionStorage that will be loaded.
+   * @param {String} oldStorage (Optional) The name of the storage in sessionStorage that will be deleted.
    */
   static sessionLoad(storage, oldStorage = null) {
     if (oldStorage !== null && sessionStorage.getItem(oldStorage)) {
@@ -36,9 +36,9 @@ export default class Storage {
   }
 
   /**
-   * Checks if localStorage is available at the moment, and if does, saves the data into the selected storage
-   * @param {String} storage the name of the storage
-   * @param {Object} data the object that will be saved in the storage
+   * Checks if localStorage is available at the moment, and if does, saves the data into the selected storage.
+   * @param {String} storage the name of the storage.
+   * @param {Object} data the object that will be saved in the storage.
    */
   static localSave(storage, data) {
     if (typeof (Storage) !== 'undefined') {
@@ -50,9 +50,9 @@ export default class Storage {
   }
 
   /**
-   * Checks if sessionStorage is available at the moment, and if does, saves the data into the selected storage
-   * @param {String} storage the name of the storage
-   * @param {Object} data the object that will be saved in the storage
+   * Checks if sessionStorage is available at the moment, and if does, saves the data into the selected storage.
+   * @param {String} storage the name of the storage.
+   * @param {Object} data the object that will be saved in the storage.
    */
   static sessionSave(storage, data) {
     if (typeof (Storage) !== 'undefined') {
