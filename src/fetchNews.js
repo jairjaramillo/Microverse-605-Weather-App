@@ -1,8 +1,8 @@
-import newsKey from './helper/newsKey';
+import keyNews from './helper/keyNews';
 
 export default async function fetchNews(query) {
   try {
-    const fetchString = `https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=${newsKey()}`;
+    const fetchString = `https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=${keyNews()}`;
     const fetchData = await fetch(fetchString, { mode: 'cors' });
     const data = await fetchData.json();
 
