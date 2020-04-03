@@ -1,4 +1,3 @@
-<br />
 <p align="center">
   <a href="https://www.microverse.org/">
   <img src="./doc/microverse.png" alt="Logo" width="80" height="80">
@@ -7,7 +6,7 @@
 
 <center><h1>Microverse 605: Weather App</h1></center>
 
-<center><h2><a href="https://jairjy.github.io/Microverse-605-Weather-App">Check a live version of this project</a><h2></center>
+<center><h2><a href="https://jairjy.github.io/Microverse-605-Weather-App" target="_blank">Check a live version of this project</a><h2></center>
 
 ## About The Project
 
@@ -21,15 +20,16 @@ This project is a web app where the user can add as many countries as they want,
 
 This app was made using this technologies
 
-* [Javascript](https://www.javascript.com/)
-* [Node JS](https://nodejs.org/en/)
-* [NPM](https://www.npmjs.com/)
-* [Bootstrap](https://getbootstrap.com/)
-* [Stickler](https://stickler-ci.com/)
+* <a href="" target="_blank">Javascript</a>
+* <a href="" target="_blank">Node JS</a>
+* <a href="" target="_blank">NPM</a>
+* <a href="" target="_blank">Bootstrap</a>
+* <a href="" target="_blank">Stickler</a>
+<a href="" target="_blank"></a>
 
 This app also uses these services/APIs:
-* [OpenWeatherApp](https://openweathermap.org/)
-* [News API](https://newsapi.org/)
+* <a href="https://openweathermap.org/" target="_blank">OpenWeatherApp</a>[]()
+* <a href="" target="_blank"></a>[News API](https://newsapi.org/)
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps:
@@ -48,8 +48,8 @@ curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-* If you're using Microsoft Windows, the Git installer can be found [here](https://gitforwindows.org/), and Node JS/NPM installer can be found [here](https://nodejs.org/en/download/).
-* If you have another type of Linux Distribution, you can check how to install Node JS and NPM by checking [this article](https://nodejs.org/en/download/package-manager/).
+* If you're using Microsoft Windows, the Git installer can be found <a href="https://gitforwindows.org/" target="_blank">here</a>, and Node JS/NPM installer can be found <a href="https://nodejs.org/en/download/" target="_blank">here</a>.
+* If you have another type of Linux Distribution, you can check how to install Node JS and NPM by checking <a href="https://nodejs.org/en/download/package-manager/" target="_blank">this article</a>.
 
 ### Installation
 
@@ -88,14 +88,14 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-* Jair Jaramillo: [Github](https://github.com/jairjy), [Twitter](https://twitter.com/jairjy)
+* Jair Jaramillo: <a href="https://github.com/jairjy" target="_blank">Github</a>, <a href="https://twitter.com/jairjy" target="_blank">Twitter</a>
 
-Project Link: [https://github.com/jairjy/Microverse-605-Weather-App](https://github.com/jairjy/Microverse-605-Weather-App)
+Project Link: <a href="https://github.com/jairjy/Microverse-605-Weather-App" target="_blank">https://github.com/jairjy/Microverse-605-Weather-App</a>
 
 <!-- ACKNOWLEDGEMENTS -->
 
 ## Acknowledgements
 
-* [Microverse](https://www.microverse.org/)
-* [The Odin Project](https://www.theodinproject.com/)
-* [W3Schools](https://www.w3schools.com/)
+* <a href="https://www.microverse.org/" target="_blank">Microverse</a>
+* <a href="https://www.theodinproject.com/" target="_blank">The Odin Project</a>
+* <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
