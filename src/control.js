@@ -3,7 +3,7 @@ import create from './helper/create';
 import weatherKey from './helper/weatherKey';
 import newsKey from './helper/newsKey';
 
-class Control {
+export default class Control {
   constructor(CountryList) {
     this.countryList = CountryList;
     this.renderList();
@@ -121,5 +121,3 @@ class Control {
     };
   }
 }
-
-export default Control;
