@@ -5,8 +5,8 @@ import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 import 'bootstrap';
 import './scss/style.scss';
-import Control from './control';
+import Render from './render';
 import CountryList from './countryList';
 
 const countryList = new CountryList();
-const navbar = new Control(countryList);
+const navbar = new Render(countryList);

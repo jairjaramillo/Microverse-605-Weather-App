@@ -5,19 +5,16 @@ export default class CountryList {
   }
 
   saveList(array = this.countries) {
-    if (typeof (Storage) !== 'undefined') {
-      localStorage.countries = JSON.stringify(array);
-    }
+    if (typeof (Storage) !== 'undefined') localStorage.countries = JSON.stringify(array);
     // eslint-disable-next-line no-console
-    console.log('ERROR: No web storage support. Using a temporal storage instead');
+    else console.log('ERROR: No web storage support. Using a temporal storage instead');
   }
 
-  getLast(array = this.countries) {
-    return array[array.length - 1];
-  }
+  getLast(array = this.countries) { return array[array.length - 1]; }
 
-  addCountry(jsonData, array = this.countries) {
-    array.push(jsonData);
+  async addCountry(jsonData, array = this.countries) {
+    const data = await jsonData;
+    array.push(data);
     this.saveList();
   }
 
@@ -26,7 +23,5 @@ export default class CountryList {
     this.saveList();
   }
 
-  removeLast(array = this.countries) {
-    this.removeCountry(array.length - 1);
-  }
+  removeLast(array = this.countries) { this.removeCountry(array.length - 1); }
 }

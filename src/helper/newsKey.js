@@ -1,3 +1,1 @@
-export default function weatherKey() {
-  return 'c9cf6f4b455f4a579b04f6a0c482ff44';
-}
+export default function weatherKey() { return 'c9cf6f4b455f4a579b04f6a0c482ff44'; }
