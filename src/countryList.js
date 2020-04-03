@@ -1,9 +1,8 @@
-import dataLoad from './helper/dataLoad';
-import dataSave from './helper/dataSave';
+import Storage from './helper/storage';
 
 export default class CountryList {
   constructor() {
-    this.countries = dataLoad('countryStorage', 'countries');
+    this.countries = Storage.localLoad('countryStorage', 'countries');
     if (this.countries === null) this.countries = [];
   }
 
@@ -11,12 +10,12 @@ export default class CountryList {
 
   addCountry(jsonData, array = this.countries, storage = 'countryStorage') {
     array.push(jsonData);
-    dataSave(storage, array);
+    Storage.localSave(storage, array);
   }
 
   removeCountry(index, array = this.countries, storage = 'countryStorage') {
     array.splice(index, 1);
-    dataSave(storage, array);
+    Storage.localSave(storage, array);
   }
 
   removeLast(array = this.countries) { this.removeCountry(array.length - 1); }

@@ -2,12 +2,11 @@
 import create from './helper/create';
 import fetchWeather from './fetchWeather';
 import fetchNews from './fetchNews';
-import dataLoad from './helper/dataLoad';
-import dataSave from './helper/dataSave';
+import Storage from './helper/storage';
 
 export default class Render {
   constructor(CountryList) {
-    this.type = dataLoad('temp');
+    this.type = Storage.localLoad('temp');
     if (this.type === null) this.type = 1;
 
     this.countryList = CountryList;
@@ -24,13 +23,13 @@ export default class Render {
 
     document.getElementById('change-c').onclick = () => {
       this.type = 1;
-      dataSave('temp', this.type);
+      Storage.localSave('temp', this.type);
       this.renderTemp();
     };
 
     document.getElementById('change-f').onclick = () => {
       this.type = 2;
-      dataSave('temp', this.type);
+      Storage.localSave('temp', this.type);
       this.renderTemp();
     };
   }
