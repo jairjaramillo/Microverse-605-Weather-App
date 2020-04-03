@@ -1,5 +1,9 @@
 /* eslint-disable no-console */
 export default class Storage {
+  constructor() {
+    this.errorMessage = 'ERROR: No web storage support. Using a temporal storage instead';
+  }
+
   static localLoad(storage, oldStorage = null) {
     if (oldStorage !== null && localStorage.getItem(oldStorage)) {
       localStorage.removeItem(oldStorage);
@@ -19,12 +23,12 @@ export default class Storage {
   static localSave(storage, data) {
     if (typeof (Storage) !== 'undefined') {
       localStorage.setItem(storage, JSON.stringify(data));
-    } else console.log('ERROR: No web storage support. Using a temporal storage instead');
+    } else console.log(this.errorMessage);
   }
 
   static sessionSave(storage, data) {
     if (typeof (Storage) !== 'undefined') {
       sessionStorage.setItem(storage, JSON.stringify(data));
-    } else console.log('ERROR: No web storage support. Using a temporal storage instead');
+    } else console.log(this.errorMessage);
   }
 }
